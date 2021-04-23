@@ -1,1 +1,12 @@
-Team The Bored Devlog
+Team The Bored -- Alvin Wu, Jeffrey Huang, William Yin
+SoftDev
+P3 -- ArRESTed Development, JuSt in Time
+2021-04-23
+
+
+williamY -- 2020-04-21 10:01
+Created design document.
+================================================================================
+williamY -- 2020-04-22 19:23
+Finished design document and assigned responsibilities.
+================================================================================
