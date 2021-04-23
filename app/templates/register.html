@@ -1,0 +1,30 @@
+<!--
+Team TheBored (Alvin Wu, William Yin, Jeffrey Huang)
+SoftDev
+P3 -- ArRESTed Development, JuSt in Time
+2021-04-29
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/css/layout.css">
+    <title> Register </title>
+  </head>
+  <body>
+
+  <h1> Register a Username & Password </h1>
+  <h2>{{ error_type }}</h2>
+    <form action="/register_auth" method = "post">
+      <input type ="text" placeholder ="Username" name="new_username">
+      <input type ="password" placeholder ="Password" name="new_password_1">
+      <input type ="password" placeholder ="Confirm Password" name = "new_password_2">
+      <input type ="text" placholder ="Bibliography" name="new_bibliography">
+      <input type="submit" name="sub1">
+    </form>
+   <br>
+   <form action = "/logout">
+     <input type = "submit" value = "Login Page">
+   </form>
+  </body>
+</html>
