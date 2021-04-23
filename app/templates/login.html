@@ -7,19 +7,29 @@ P3 -- ArRESTed Development, JuSt in Time
 
 <!DOCTYPE html>
 <html>
-<h1> Welcome to TheBored Review Site! </h1>
+  <head>
+    <link rel="stylesheet" href="../static/css/layout.css">
+    <title> LOGIN PAGE </title>
+  </head>
 
-<h3> Enter your credentials to proceed </h3>
+  <body>
+    <h1> Welcome to The Bored's Review Site! </h1>
+    <h2> Enter your username & password below to proceed. </h2>
+    <h3> {{error_type}} </h3>
 
-<form action="/authenticate">
-Username <input type = "text" name = "username">
-<br></br>
-Password <input type = "password" name = "password">
-<br></br>
-<input type = "submit" name = "sub" value = "Login">
-</form>
-<h3>
-Sign Up!
-</h3>
-<a id="register" href = "/register">Create an Account</a>
+    <form action="/auth" method = "post">
+      <input type="text" placeholder="Username" name="username">
+      <input type="password" placeholder="Password" name="password">
+      <input type="submit" name="sub1">
+    </form>
+     <br>
+
+  <h2>
+    Don't have an account?
+    <form action = "/register">
+      <input type = "submit" value = "Register">
+    </form>
+  </h2>
+  </body>
+
 </html>
