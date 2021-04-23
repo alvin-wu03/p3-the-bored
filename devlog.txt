@@ -21,5 +21,6 @@ Created __init__.py file and did some testing
 ================================================================================
 jeffreyH -- 2021-04-23 17:14
 Added login path and database creation in _init__.py
+Confirmed the user login and registration works
 Starting to modify templates and css
 ================================================================================
