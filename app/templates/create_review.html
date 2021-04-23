@@ -1,0 +1,32 @@
+<!-- 
+Team TheBored (Alvin Wu, William Yin, Jeffrey Huang) 
+SoftDev 
+P3 -- ArRESTed Development, JuSt in Time
+2021-04-23 
+-->
+
+<!DOCTYPE html>
+<html>
+<h1> Welcome to TheBored Review Site! </h1>
+
+<h3> Review Creation </h3>
+<h4>Product Name: {{productname}}</h4>
+<h4>Product Type: {{producttype}}</h4>
+<form action = "/createreview">
+Title: <input type = "text" name = "reviewtitle">
+<br></br> 
+Rating (0-5 stars):
+0<input type = "radio" name = "productrating" value = "0">
+1<input type = "radio" name = "productrating" value = "1">
+2<input type = "radio" name = "productrating" value = "2">
+3<input type = "radio" name = "productrating" value = "3">
+4<input type = "radio" name = "productrating" value = "4">
+5<input type = "radio" name = "productrating" value = "5">
+<br></br>
+What did you think? 
+<br>
+<textarea name = "reviewtext" rows = "10" cols = "50"></textarea>
+<br></br>
+<input type = "submit" value = "Submit Review">
+</form>
+</html>

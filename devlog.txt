@@ -15,4 +15,8 @@ Remade site map using Google Drawings
 Added project description
 Assigned tasks
 ================================================================================
+alvinW -- 2021-04-23 11:48
+Created all required templates (as of now)
+Created __init__.py file and did some testing
+================================================================================
 
