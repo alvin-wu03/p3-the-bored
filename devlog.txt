@@ -24,3 +24,6 @@ Added login path and database creation in _init__.py
 Confirmed the user login and registration works
 Starting to modify templates and css
 ================================================================================
+alvinW -- 2021-04-24 14:33
+Added search result template (needs testing)
+================================================================================
