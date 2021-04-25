@@ -5,31 +5,14 @@ P3 -- ArRESTed Development, JuSt in Time
 2021-04-29
 -->
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="../static/css/layout.css">
-    <title> LOGIN PAGE </title>
-  </head>
-
-  <body>
-    <h1> Welcome to The Bored's Review Site! </h1>
-    <h2> Enter your username & password below to proceed. </h2>
-    <h3> {{error_type}} </h3>
-
-    <form action="/auth" method = "post">
-      <input type="text" placeholder="Username" name="username">
-      <input type="password" placeholder="Password" name="password">
-      <input type="submit" name="sub1">
+{% extends "layout.html" %}
+{% block outer_content %}
+    <form action="/login" method="post">
+        <p>Username</p>
+        <input type="text" name="username">
+        <p>Password</p>
+        <input type="password" name="password">
+        <input type="submit" value="Login">
     </form>
-     <br>
-
-  <h2>
-    Don't have an account?
-    <form action = "/register">
-      <input type = "submit" value = "Register">
-    </form>
-  </h2>
-  </body>
-
-</html>
+    <p>Don't have an account? Sign up <a href={{ url_for("register") }}>here</a>.</p>
+{% endblock outer_content %}
