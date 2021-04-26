@@ -14,7 +14,12 @@
   * Bug Fixing
  
 ## Description:
-Our website allows registered users to search for products and leave reviews about them. 
+Our website allows registered users to search for products and leave reviews about them.
+
+## APIs Used:
+* https://github.com/stuy-softdev/notes-and-code20-21/blob/master/api_kb/411_on_RecipeAPI.md
+* https://github.com/stuy-softdev/notes-and-code20-21/blob/master/api_kb/411_on_NYTBooksAPI.md
+* https://github.com/stuy-softdev/notes-and-code20-21/blob/master/api_kb/411_on_MovieDB.md
 
 ## Launch Codes:
 1. Clone this repository
