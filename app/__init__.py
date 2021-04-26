@@ -3,7 +3,6 @@
 # P3 -- ArRESTed Development, JuSt in Time
 # 2021-04-29
 
-
 from flask import Flask, render_template, request, session, url_for, redirect, abort
 from flask_bcrypt import Bcrypt
 import bcrypt
@@ -93,7 +92,7 @@ def index():
     if not session.get("user_id") or not session.get("username"):
         return redirect(url_for("login"))
 
-    
+
 
 
 if __name__ == "__main__":
