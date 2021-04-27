@@ -3,20 +3,24 @@
 # P3 -- ArRESTed Development, JuSt in Time
 # 2021-04-29
 
+
 from flask import Flask, render_template, request, session, url_for, redirect, abort
 from flask_bcrypt import Bcrypt
 import bcrypt
 import os
 import time
 import sqlite3
-import utils
+import urllib.request
+import urllib.parse
+import json
+from utils import utils
 
 
 APP_NAME = "The Board"
-app = Flask(APP_NAME)
+app = Flask(APP_NAME, template_folder="app/templates")
 bcrypt = Bcrypt(app)
 app.secret_key = os.urandom(32)
-DB_FILE = "the_board.db"
+DB_FILE = "app/the_board.db"
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -89,10 +93,18 @@ def logout():
 @app.route("/")
 @app.route("/index")
 def index():
+    movie = {}
+    if request.args.get("movie_title"):
+        arg_mapping = {"t": request.args.get("movie_title"), "apikey": "47bfa63d"}
+        response_read = ""
+        with urllib.request.urlopen("http://www.omdbapi.com/?{}".format(urllib.parse.urlencode(arg_mapping))) as response:
+            response_read = response.read()
+        movie = json.loads(response_read)
+
     if not session.get("user_id") or not session.get("username"):
-        return redirect(url_for("login"))
+        return render_template("index.html", movie=movie)
 
-
+    return render_template("index.html", username=session["username"], logged_in=True, movie=movie)
 
 
 if __name__ == "__main__":

@@ -6,8 +6,8 @@ P3 -- ArRESTed Development, JuSt in Time
 -->
 
 {% extends "layout.html" %}
-{% block outer_content %}
-    <form action="/register" method="post">
+{% block content %}
+    <form action={{ url_for("register") }} method="post">
         <p>Username</p>
         <input type="text" name="username">
         <p>Password (must be at least 4 characters)</p>
@@ -18,5 +18,4 @@ P3 -- ArRESTed Development, JuSt in Time
         <input type="text" name="biography">
         <input type="submit" value="Register">
     </form>
-    <p>Already have an account? Login <a href={{ url_for("login") }}>here</a>.</p>
-{% endblock outer_content %}
+{% endblock content %}
