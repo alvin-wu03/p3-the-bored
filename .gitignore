@@ -1,3 +1,4 @@
 app/__pycache__
 utils/__pycache__
+app/the_board.db
 api_keys/
