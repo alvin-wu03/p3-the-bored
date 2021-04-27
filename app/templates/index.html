@@ -1,0 +1,34 @@
+<!--
+Team TheBored (Alvin Wu, William Yin, Jeffrey Huang)
+SoftDev
+P3 -- ArRESTed Development, JuSt in Time
+2021-04-29
+-->
+{% extends "layout.html" %}
+{% block content %}
+    <form action={{ url_for("index") }} method="get">
+        <div>
+            Movie Title:
+            <input type="text" name="movie_title">
+        </div>
+        <input type="submit" value="Search">
+    </form>
+    {% if movie %}
+        <!--
+            TODO: Show poster of movie above title, display ratings from Rotten Tomatoes, Metacritic and imdb.
+            Also show release date and age rating.
+        -->
+	<img src = {{ movie["Poster"] }}> <br></br>
+	<b>{{ movie["Title"] }}</b><br></br>
+	<b>Release Date: {{ movie["Released"] }}</b><br></br>
+	<b>Critical Ratings:</b> 
+	<br></br> {{ movie["Ratings"][0]["Source"] }} : {{ movie["Ratings"][0]["Value"] }}
+	<br></br> {{ movie["Ratings"][1]["Source"] }} : {{ movie["Ratings"][1]["Value"] }}
+	<br></br> {{ movie["Ratings"][2]["Source"] }} : {{ movie["Ratings"][2]["Value"] }}
+	<br></br>
+	<b>Age Rating: {{ movie["Rated"] }}</b>
+    {% endif %}
+    {% if logged_in %}
+        <h2>{{ username }}</h2>
+    {% endif %}
+{% endblock content %}
