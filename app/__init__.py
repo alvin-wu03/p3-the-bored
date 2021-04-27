@@ -19,7 +19,7 @@ from api_keys import api_keys
 
 
 APP_NAME = "The Board"
-app = Flask(APP_NAME, template_folder="app/templates")
+app = Flask(APP_NAME, template_folder="app/templates", static_folder="app/static")
 bcrypt = Bcrypt(app)
 app.secret_key = os.urandom(32)
 DB_FILE = "app/the_board.db"
