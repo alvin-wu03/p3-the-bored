@@ -9,9 +9,9 @@ P3 -- ArRESTed Development, JuSt in Time
 {% block content %}
     <form action={{ url_for("register") }} method="post">
         <p>Username: <input type="text" placeholder="Enter Username" name="username"> </p>
-        <p>Password: (must be at least 4 characters) <input type="password" placeholder="Enter Password" name="password"> </p>
+        <p>Password (must be at least 4 characters): <input type="password" placeholder="Enter Password" name="password"> </p>
         <p>Confirm Password: <input type="password" placeholder="Re-enter Password" name="confirm password"> </p>
-        <p>Short description: <input type="text" placeholder="Enter Biography" name="biography"> </p>
+        <p>Short description (optional): <input type="text" placeholder="Short Description" name="description"> </p>
         <input type="submit" value="Register">
     </form>
 {% endblock content %}

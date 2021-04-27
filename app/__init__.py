@@ -13,7 +13,9 @@ import sqlite3
 import urllib.request
 import urllib.parse
 import json
+import uuid
 from utils import utils
+from api_keys import api_keys
 
 
 APP_NAME = "The Board"
@@ -29,7 +31,7 @@ def register():
     if request.method == "GET":
         return render_template("register.html")
 
-    if not request.form.get("username") or not request.form.get("password") or not request.form.get("confirm password") or not request.form.get("biography"):
+    if not request.form.get("username") or not request.form.get("password") or not request.form.get("confirm password"):
         return render_template("register.html", warning="Please fill out all fields.")
     elif len(request.form.get("password")) < 4:
         return render_template("register.html", warning="Password must be at least 4 characters long.")
@@ -45,14 +47,18 @@ def register():
         return render_template("register.html", warning="Username is already taken.")
 
     password_hash = bcrypt.generate_password_hash(request.form.get("password"))
-    cursor.execute("insert into users (username, password, biography) values (?, ?, ?)", (request.form.get("username"), password_hash, request.form.get("biography")))
-    cursor.execute("select * from users where username = ?", (request.form.get("username"),))
+    user_id = str(uuid.uuid4())
+    if request.form.get("description"):
+        cursor.execute("insert into users (user_id, username, password, description) values (?, ?, ?, ?)", (user_id, request.form.get("username"), password_hash, request.form.get("description")))
+    else:
+        cursor.execute("insert into users (user_id, username, password) values (?, ?, ?)", (user_id, request.form.get("username"), password_hash))
+    cursor.execute("select * from users where user_id = ?", (user_id,))
     user = cursor.fetchone()
     db.commit()
     db.close()
 
-    session["user_id"] = user[0]
-    session["username"] = user[1]
+    session["user_id"] = user[1]
+    session["username"] = user[2]
     return redirect(url_for("index"))
 
 
@@ -72,11 +78,11 @@ def login():
     cursor.execute("select * from users where username = ?", (request.form.get("username"),))
     user = cursor.fetchone()
     db.close()
-    if not user or not bcrypt.check_password_hash(user[2], request.form.get("password")):
+    if not user or not bcrypt.check_password_hash(user[3], request.form.get("password")):
         return render_template("login.html", warning="Incorrect username or password.")
 
-    session["user_id"] = user[0]
-    session["username"] = user[1]
+    session["user_id"] = user[1]
+    session["username"] = user[2]
     return redirect(url_for("index"))
 
 
@@ -87,15 +93,15 @@ def logout():
 
     session.pop("user_id")
     session.pop("username")
-    return redirect(url_for("login"))
+    return redirect(url_for("index"))
 
 
 @app.route("/")
 @app.route("/index")
 def index():
     movie = {}
-    if request.args.get("movie_title"):
-        arg_mapping = {"t": request.args.get("movie_title"), "apikey": "47bfa63d"}
+    if request.args.get("search_query"):
+        arg_mapping = {"t": request.args.get("search_query"), "apikey": api_keys.OMDB_KEY}
         response_read = ""
         with urllib.request.urlopen("http://www.omdbapi.com/?{}".format(urllib.parse.urlencode(arg_mapping))) as response:
             response_read = response.read()
@@ -109,7 +115,7 @@ def index():
 
 @app.route("/movie/<string:imdb_id>")
 def movie(imdb_id):
-    arg_mapping = {"i": imdb_id, "apikey": "47bfa63d"}
+    arg_mapping = {"i": imdb_id, "apikey": api_keys.OMDB_KEY}
     response_read = ""
     with urllib.request.urlopen("http://www.omdbapi.com/?{}".format(urllib.parse.urlencode(arg_mapping))) as response:
         response_read = response.read()

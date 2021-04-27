@@ -8,14 +8,14 @@ P3 -- ArRESTed Development, JuSt in Time
 {% block content %}
     <form action={{ url_for("index") }} method="get">
         <div>
-           <select name = "category">
-	<option value="Movie">Movie</option>
-	<option value="Recipe">Recipe</option>
-	<option value="Book">Book</option>
-	</select>
-<input type = "text" name = "searchquery">
+           <select name="category">
+            	<option value="Movie">Movie</option>
+            	<option value="Recipe">Recipe</option>
+            	<option value="Book">Book</option>
+           </select>
+           <input type="text" name="search_query">
         </div>
-        <input type = "submit" name = "search" value = "Search!">
+        <input type ="submit" value="Search">
     </form>
     {% if movie %}
     	<img src={{ movie["Poster"] }}/> <br></br>
@@ -30,8 +30,5 @@ P3 -- ArRESTed Development, JuSt in Time
         {% else %}
             <b>Critical Ratings: N/A</b>
         {% endif %}
-    {% endif %}
-    {% if logged_in %}
-        <h2>{{ username }}</h2>
     {% endif %}
 {% endblock content %}
