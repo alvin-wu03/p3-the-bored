@@ -107,6 +107,11 @@ def index():
     return render_template("index.html", username=session["username"], logged_in=True, movie=movie)
 
 
+@app.route("/movie/<string:imdb_id>")
+def movie(imdb_id):
+    return imdb_id
+
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
