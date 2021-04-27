@@ -109,7 +109,16 @@ def index():
 
 @app.route("/movie/<string:imdb_id>")
 def movie(imdb_id):
-    return imdb_id
+    arg_mapping = {"i": imdb_id, "apikey": "47bfa63d"}
+    response_read = ""
+    with urllib.request.urlopen("http://www.omdbapi.com/?{}".format(urllib.parse.urlencode(arg_mapping))) as response:
+        response_read = response.read()
+    movie = json.loads(response_read)
+    db = sqlite3.connect(DB_FILE)
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM movie_reviews where movie_id =?", (imdb_id,))
+    reviews = cursor.fetchall()
+    return render_template("movie.html", movie = movie, reviews = reviews)
 
 
 if __name__ == "__main__":

@@ -27,3 +27,7 @@ Starting to modify templates and css
 alvinW -- 2021-04-24 14:33
 Added search result template (needs testing)
 ================================================================================
+alvinW -- 2021-04-27 10:13
+Created index.html template
+Created specific movie page using ID
+================================================================================
