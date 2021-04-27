@@ -8,10 +8,14 @@ P3 -- ArRESTed Development, JuSt in Time
 {% block content %}
     <form action={{ url_for("index") }} method="get">
         <div>
-            Movie Title:
-            <input type="text" name="movie_title">
+           <select name = "category">
+	<option value="Movie">Movie</option>
+	<option value="Recipe">Recipe</option>
+	<option value="Book">Book</option>
+	</select>
+<input type = "text" name = "searchquery">
         </div>
-        <input type="submit" value="Search">
+        <input type = "submit" name = "search" value = "Search!">
     </form>
     {% if movie %}
     	<img src={{ movie["Poster"] }}/> <br></br>
