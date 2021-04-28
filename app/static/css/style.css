@@ -7,11 +7,11 @@ input[type=text], input[type=password] {
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
-    background: #f1f1f1;
+    background: white;
   }
 
 input[type=text]:focus, input[type=password]:focus {
-  background-color: #999;
+  background-color: white;
   outline: none;
 }
 
@@ -32,6 +32,7 @@ button:hover {
 .container {
   padding: 16px;
 }
+
 h1 {
   text-align:center;
   padding-top:10px;
@@ -41,4 +42,12 @@ h1 {
 #error {
   text-align:center;
   color:red;
+}
+
+a {
+  background-color: red;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
