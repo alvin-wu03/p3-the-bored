@@ -1,7 +1,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password]{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -50,4 +50,10 @@ a {
   padding: 1em 1.5em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.option {
+  font-family: Arial, Helvetica, sans-serif;
+  display:flex;
+
 }

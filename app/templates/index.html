@@ -4,20 +4,20 @@ SoftDev
 P3 -- ArRESTed Development, JuSt in Time
 2021-04-29
 -->
-
+<html>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% extends "layout.html" %}
 {% block content %}
     <form action={{ url_for("index") }} method="get">
-        <div>
-           <select name="category">
+        <div class="option" style="display:flex">
+           <select name="category" style="flex:1">
             	<option value="Movie">Movie</option>
             	<option value="Recipe">Recipe</option>
             	<option value="Book">Book</option>
            </select>
-           <input type="text" name="search_query">
+           <input type="text" name="search_query" placeholder="Enter Search" style="flex:10">
+        <button type ="submit" value="Search" style="flex:1">Search</button>
         </div>
-        <input type ="submit" value="Search">
     </form>
     {% if movie %}
     	<img src={{ movie["Poster"] }}/> <br></br>
@@ -34,3 +34,4 @@ P3 -- ArRESTed Development, JuSt in Time
         {% endif %}
     {% endif %}
 {% endblock content %}
+</html>

@@ -5,16 +5,18 @@ P3 -- ArRESTed Development, JuSt in Time
 2021-04-29
 -->
 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% extends "layout.html" %}
 {% block content %}
     <form action={{ url_for("index") }} method="get">
         <div>
             Movie Title:
-            <input type="text" name="movie_title">
+            <input type="text" name="movie_title" placeholder="Search">
         </div>
-        <input type="submit" value="Search">
+        <button type="submit" value="Search"> Search </button>
     </form>
     {% if movie %}
+    <body>
     	<img src={{ movie["Poster"] }}/> <br></br>
     	<b>{{ movie["Title"] }}</b><br></br>
     	<b>Release Date: {{ movie["Released"] }}</b><br></br>
@@ -31,6 +33,7 @@ P3 -- ArRESTed Development, JuSt in Time
     {% if logged_in %}
         <h2>{{ username }}</h2>
     {% endif %}
+    </body>
 
 <h4> Most Recent Reviews: </h4>
 {% for r in reviews|sort(attribute='0')|reverse %}
