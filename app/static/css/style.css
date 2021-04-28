@@ -29,7 +29,16 @@ button {
 button:hover {
   opacity:1;
 }
-
 .container {
   padding: 16px;
+}
+h1 {
+  text-align:center;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+#error {
+  text-align:center;
+  color:red;
 }
