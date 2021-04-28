@@ -5,17 +5,33 @@ P3 -- ArRESTed Development, JuSt in Time
 2021-04-29
 -->
 <html>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-{% extends "layout.html" %}
-{% block content %}
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+      .option {
+        border: 5px ;
+        text-align: center;
+        align-items: stretch;
+        height: 60px;
+        display:flex;
+      }
+      #search {
+        flex:10;
+        margin:10px 5px;
+      }
+    </style>
+  </head>
+    {% extends "layout.html" %}
+
+    <p>{% block content %}</p><p></p>
     <form action={{ url_for("index") }} method="get">
-        <div class="option" style="display:flex">
-           <select name="category" style="flex:1">
+        <div class="option">
+           <select name="category" style="flex:1; center; padding:2px 5px; margin:10px 5px;">
             	<option value="Movie">Movie</option>
             	<option value="Recipe">Recipe</option>
             	<option value="Book">Book</option>
            </select>
-           <input type="text" name="search_query" placeholder="Enter Search" style="flex:10">
+           <input type="text" id="search" name="search_query" placeholder="Enter Search">
         <button type ="submit" value="Search" style="flex:1">Search</button>
         </div>
     </form>
@@ -33,5 +49,5 @@ P3 -- ArRESTed Development, JuSt in Time
             <b>Critical Ratings: N/A</b>
         {% endif %}
     {% endif %}
-{% endblock content %}
+    {% endblock content %}
 </html>
