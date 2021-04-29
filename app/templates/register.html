@@ -4,14 +4,8 @@ SoftDev
 P3 -- ArRESTed Development, JuSt in Time
 2021-04-29
 -->
-<html>
 {% extends "layout.html" %}
 {% block content %}
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <title> Register </title>
-  </head>
-  <body>
     <form action={{ url_for("register") }} method="post">
       <div class="container">
         <p> <label for="username"> <b>Username: </b> </label> </p>
@@ -29,6 +23,4 @@ P3 -- ArRESTed Development, JuSt in Time
         <button type="submit" class="signupbtn" value="Register"> Sign Up </button>
       </div>
     </form>
-  </body>
 {% endblock content %}
-</html>

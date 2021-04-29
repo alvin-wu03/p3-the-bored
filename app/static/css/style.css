@@ -51,3 +51,16 @@ a {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.option {
+  border: 5px ;
+  text-align: center;
+  align-items: stretch;
+  height: 60px;
+  display:flex;
+}
+
+#search {
+  flex:10;
+  margin:10px 5px;
+}

@@ -1,1 +1,384 @@
 https://developer.nytimes.com/docs/books-product/1/overview
+Sample data for NYT Books
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2021 The New York Times Company.  All Rights Reserved.",
+    "num_results": 2,
+    "results": [
+        {
+            "title": "HEROES OF OLYMPUS",
+            "description": "A new generation of demigods embarks on a series of adventures.",
+            "contributor": "by Rick Riordan",
+            "author": "Rick Riordan",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Disney-Hyperion",
+            "isbns": [
+                {
+                    "isbn10": "142311339X",
+                    "isbn13": "9781423113393"
+                },
+                {
+                    "isbn10": "1423140591",
+                    "isbn13": "9781423140597"
+                },
+                {
+                    "isbn10": "1423113462",
+                    "isbn13": "9781423113461"
+                },
+                {
+                    "isbn10": "1423140605",
+                    "isbn13": "9781423140603"
+                },
+                {
+                    "isbn10": "1423145402",
+                    "isbn13": "9781423145400"
+                },
+                {
+                    "isbn10": "1423146727",
+                    "isbn13": "9781423146728"
+                },
+                {
+                    "isbn10": "1423170962",
+                    "isbn13": "9781423170969"
+                },
+                {
+                    "isbn10": "1423142004",
+                    "isbn13": "9781423142003"
+                },
+                {
+                    "isbn10": "1423146735",
+                    "isbn13": "9781423146735"
+                },
+                {
+                    "isbn10": "1423155149",
+                    "isbn13": "9781423155140"
+                },
+                {
+                    "isbn10": "1484720733",
+                    "isbn13": "9781484720738"
+                },
+                {
+                    "isbn10": "1410452050",
+                    "isbn13": "9781410452054"
+                },
+                {
+                    "isbn10": "1423146778",
+                    "isbn13": "9781423146773"
+                },
+                {
+                    "isbn10": "1484709888",
+                    "isbn13": "9781484709887"
+                },
+                {
+                    "isbn10": "148470987X",
+                    "isbn13": "9781484709870"
+                },
+                {
+                    "isbn10": "1423146786",
+                    "isbn13": "9781423146780"
+                },
+                {
+                    "isbn10": "1484777921",
+                    "isbn13": "9781484777923"
+                }
+            ],
+            "ranks_history": [
+                {
+                    "primary_isbn10": "1484777921",
+                    "primary_isbn13": "9781484777923",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2016-12-25",
+                    "bestsellers_date": "2016-12-10",
+                    "weeks_on_list": 111,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423155149",
+                    "primary_isbn13": "9781423155140",
+                    "rank": 4,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2016-06-12",
+                    "bestsellers_date": "2016-05-28",
+                    "weeks_on_list": 110,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146786",
+                    "primary_isbn13": "9781423146780",
+                    "rank": 7,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2016-04-24",
+                    "bestsellers_date": "2016-04-09",
+                    "weeks_on_list": 109,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1484709888",
+                    "primary_isbn13": "9781484709887",
+                    "rank": 10,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-07-12",
+                    "bestsellers_date": "2015-06-27",
+                    "weeks_on_list": 108,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1484709888",
+                    "primary_isbn13": "9781484709887",
+                    "rank": 10,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-07-05",
+                    "bestsellers_date": "2015-06-20",
+                    "weeks_on_list": 107,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1484709888",
+                    "primary_isbn13": "9781484709887",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-06-28",
+                    "bestsellers_date": "2015-06-13",
+                    "weeks_on_list": 106,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1484709888",
+                    "primary_isbn13": "9781484709887",
+                    "rank": 9,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-06-21",
+                    "bestsellers_date": "2015-06-06",
+                    "weeks_on_list": 105,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1484709888",
+                    "primary_isbn13": "9781484709887",
+                    "rank": 6,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-06-14",
+                    "bestsellers_date": "2015-05-30",
+                    "weeks_on_list": 104,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1484709888",
+                    "primary_isbn13": "9781484709887",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-06-07",
+                    "bestsellers_date": "2015-05-23",
+                    "weeks_on_list": 103,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1484709888",
+                    "primary_isbn13": "9781484709887",
+                    "rank": 3,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-05-31",
+                    "bestsellers_date": "2015-05-16",
+                    "weeks_on_list": 102,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 9,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-05-17",
+                    "bestsellers_date": "2015-05-02",
+                    "weeks_on_list": 101,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 5,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-05-03",
+                    "bestsellers_date": "2015-04-18",
+                    "weeks_on_list": 100,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 10,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-04-26",
+                    "bestsellers_date": "2015-04-11",
+                    "weeks_on_list": 99,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146778",
+                    "primary_isbn13": "9781423146773",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-04-19",
+                    "bestsellers_date": "2015-04-04",
+                    "weeks_on_list": 98,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 10,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-04-05",
+                    "bestsellers_date": "2015-03-21",
+                    "weeks_on_list": 97,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-03-29",
+                    "bestsellers_date": "2015-03-14",
+                    "weeks_on_list": 96,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-03-22",
+                    "bestsellers_date": "2015-03-07",
+                    "weeks_on_list": 95,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-03-15",
+                    "bestsellers_date": "2015-02-28",
+                    "weeks_on_list": 94,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 8,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-03-08",
+                    "bestsellers_date": "2015-02-21",
+                    "weeks_on_list": 93,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                },
+                {
+                    "primary_isbn10": "1423146735",
+                    "primary_isbn13": "9781423146735",
+                    "rank": 6,
+                    "list_name": "Series Books",
+                    "display_name": "Children’s Series",
+                    "published_date": "2015-03-01",
+                    "bestsellers_date": "2015-02-14",
+                    "weeks_on_list": 92,
+                    "ranks_last_week": null,
+                    "asterisk": 0,
+                    "dagger": 0
+                }
+            ],
+            "reviews": [
+                {
+                    "book_review_link": "",
+                    "first_chapter_link": "",
+                    "sunday_review_link": "",
+                    "article_chapter_link": ""
+                }
+            ]
+        },
+        {
+            "title": "HEROES OF OLYMPUS: BOOK ONE",
+            "description": "In this adaptation of the popular children’s series, which is set in the same universe as “Percy Jackson and the Olympians,” a new group of teenagers discover they are the children of ancient Greek gods.",
+            "contributor": "by Rick Riordan, Robert Venditti and Nate Powell",
+            "author": "Rick Riordan, Robert Venditti and Nate Powell",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Disney-Hyperion",
+            "isbns": [
+                {
+                    "isbn10": "1423163257",
+                    "isbn13": "9781423163251"
+                }
+            ],
+            "ranks_history": [],
+            "reviews": [
+                {
+                    "book_review_link": "",
+                    "first_chapter_link": "",
+                    "sunday_review_link": "",
+                    "article_chapter_link": ""
+                }
+            ]
+        }
+    ]
+}

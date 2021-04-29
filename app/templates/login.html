@@ -4,16 +4,8 @@ SoftDev
 P3 -- ArRESTed Development, JuSt in Time
 2021-04-29
 -->
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title> Login </title>
-  </head>
-  <body>
-    {% extends "layout.html" %}
-    {% block content %}
+{% extends "layout.html" %}
+{% block content %}
     <form action={{ url_for("login") }} method="post">
       <div class="container">
 
@@ -25,6 +17,4 @@ P3 -- ArRESTed Development, JuSt in Time
         <button type="submit" value="Login"> Login </button>
       </div>
     </form>
-    {% endblock content %}
-  </body>
-</html>
+{% endblock content %}

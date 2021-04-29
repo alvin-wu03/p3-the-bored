@@ -1,6 +1,9 @@
 import sqlite3
 import time
 import datetime
+import urllib.request
+import urllib.parse
+import json
 
 
 def select_entries_by_author(db_file, author_id=None, exclude=False):
@@ -46,3 +49,10 @@ def verify_user_owns_entry(db_file, entry_id, user_id):
         return (403, None)
 
     return (0, entry)
+
+
+def call_api(arg_mapping, api_url_base):
+    response_read = ""
+    with urllib.request.urlopen(api_url_base + "?" + urllib.parse.urlencode(arg_mapping)) as response:
+        response_read = response.read()
+    return json.loads(response_read)

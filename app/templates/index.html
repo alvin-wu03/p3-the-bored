@@ -4,50 +4,63 @@ SoftDev
 P3 -- ArRESTed Development, JuSt in Time
 2021-04-29
 -->
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <style>
-      .option {
-        border: 5px ;
-        text-align: center;
-        align-items: stretch;
-        height: 60px;
-        display:flex;
-      }
-      #search {
-        flex:10;
-        margin:10px 5px;
-      }
-    </style>
-  </head>
-    {% extends "layout.html" %}
-
-    <p>{% block content %}</p><p></p>
+{% extends "layout.html" %}
+{% block content %}
     <form action={{ url_for("index") }} method="get">
         <div class="option">
            <select name="category" style="flex:1; center; padding:2px 5px; margin:10px 5px;">
-            	<option value="Movie">Movie</option>
-            	<option value="Recipe">Recipe</option>
-            	<option value="Book">Book</option>
+            	<option value="movie">Movies</option>
+            	<option value="book">Books</option>
+            	<option value="recipe">Recipes</option>
            </select>
            <input type="text" id="search" name="search_query" placeholder="Enter Search">
         <button type ="submit" value="Search" style="flex:1">Search</button>
         </div>
     </form>
-    {% if movie %}
-    	<img src={{ movie["Poster"] }}/> <br></br>
-    	<b>{{ movie["Title"] }}</b><br></br>
-    	<b>Release Date: {{ movie["Released"] }}</b><br></br>
-        <b>Age Rating: {{ movie["Rated"] }}</b><br></br>
-        {% if movie["Ratings"] %}
-            <b>Critical Ratings:</b>
-            {% for rating in movie["Ratings"] %}
-            	<p>{{ rating["Source"] }} : {{ rating["Value"] }}</p>
+    {% if category == "movie" %}
+        {% if data["Response"] == "True" %}
+        	<img src={{ data["Poster"] }}>
+        	<h2>{{ data["Title"] }}</h2>
+        	<h3>Release Date: {{ data["Released"] }}</h3>
+            <h3>Age Rating: {{ data["Rated"] }}</h3>
+            {% if data["Ratings"] %}
+                <h3>Critical Ratings:</h3>
+                {% for rating in data["Ratings"] %}
+                	<p>{{ rating["Source"] }} - {{ rating["Value"] }}</p>
+                {% endfor %}
+            {% else %}
+                <b>Critical Ratings: N/A</b>
+            {% endif %}
+        {% else %}
+            <p>Sorry, there are no movies with that title.</p>
+        {% endif %}
+    {% elif category == "book" %}
+        {% if data["num_results"] > 0 %}
+            {% for result in data["results"] %}
+                <h3>{{ result["title"] }}</h3>
+                <p>{{ result["description"] }}</p>
+                <p>by {{ result["author"] }}</p>
+                <p>publisher: {{ result["publisher"] }}</p>
+                <br></br>
             {% endfor %}
         {% else %}
-            <b>Critical Ratings: N/A</b>
+            <p>Sorry, there are no books with that title.</p>
+        {% endif %}
+    {% elif category == "recipe" %}
+        {% if data["count"] > 0 %}
+            {% for hit in data["hits"] %}
+                <img src={{ hit["recipe"]["image"] }}>
+                <h2>{{ hit["recipe"]["label"] }}</h2>
+                <p>Health Labels: {{ ", ".join(hit["recipe"]["healthLabels"]) }}</p>
+                <p>Calories: {{ hit["recipe"]["calories"]|round|int }}</p>
+                <h3>Ingredients:</h3>
+                {% for ingredient in hit["recipe"]["ingredientLines"] %}
+                    <p>{{ ingredient }}</p>
+                {% endfor %}
+                <br></br>
+            {% endfor %}
+        {% else %}
+            <p>Sorry, no recipes match your search query.</p>
         {% endif %}
     {% endif %}
-    {% endblock content %}
-</html>
+{% endblock content %}

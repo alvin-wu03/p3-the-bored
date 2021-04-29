@@ -34,3 +34,6 @@ Created specific movie page using ID
 jeffreyH -- 2021-04-27 20:18
 Completed modifying login and register pages with css, looking to add js elements
 ================================================================================
+williamY -- 2021-04-28 23:23
+Implemented search functionality.
+================================================================================

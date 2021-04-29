@@ -14,7 +14,7 @@
   * Bug Fixing
  
 ## Description:
-Our website allows registered users to search for movies, books, and recipes 
+Our website allows registered users to search for products and leave reviews about them. 
 
 ## Launch Codes:
 1. Clone this repository

@@ -10,9 +10,6 @@ import bcrypt
 import os
 import time
 import sqlite3
-import urllib.request
-import urllib.parse
-import json
 import uuid
 from utils import utils
 from api_keys import api_keys
@@ -23,6 +20,7 @@ app = Flask(APP_NAME, template_folder="app/templates", static_folder="app/static
 bcrypt = Bcrypt(app)
 app.secret_key = os.urandom(32)
 DB_FILE = "app/the_board.db"
+PRODUCTS = ["movie", "book", "recipe"]
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -99,32 +97,24 @@ def logout():
 @app.route("/")
 @app.route("/index")
 def index():
-    movie = {}
-    if request.args.get("search_query"):
-        arg_mapping = {"t": request.args.get("search_query"), "apikey": api_keys.OMDB_KEY}
-        response_read = ""
-        with urllib.request.urlopen("http://www.omdbapi.com/?{}".format(urllib.parse.urlencode(arg_mapping))) as response:
-            response_read = response.read()
-        movie = json.loads(response_read)
+    api_data = {}
+    if request.args.get("search_query") and request.args.get("category") in PRODUCTS:
+        if request.args.get("category") == "movie":
+            arg_mapping = {"t": request.args.get("search_query"), "apikey": api_keys.OMDB_KEY}
+            api_data["movie"] = utils.call_api(arg_mapping, "http://www.omdbapi.com/")
+        elif request.args.get("category") == "book":
+            arg_mapping = {"title": request.args.get("search_query"), "api-key": api_keys.NYT_BOOKS_KEY}
+            api_data["book"] = utils.call_api(arg_mapping, "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json")
+        elif request.args.get("category") == "recipe":
+            arg_mapping = {"q": request.args.get("search_query"), "app_id": api_keys.EDAMAM_APP_ID, "app_key": api_keys.EDAMAM_APP_KEY}
+            api_data["recipe"] = utils.call_api(arg_mapping, "https://api.edamam.com/search")
 
-    if not session.get("user_id") or not session.get("username"):
-        return render_template("index.html", movie=movie)
 
-    return render_template("index.html", username=session["username"], logged_in=True, movie=movie)
-
-
-@app.route("/movie/<string:imdb_id>")
-def movie(imdb_id):
-    arg_mapping = {"i": imdb_id, "apikey": api_keys.OMDB_KEY}
-    response_read = ""
-    with urllib.request.urlopen("http://www.omdbapi.com/?{}".format(urllib.parse.urlencode(arg_mapping))) as response:
-        response_read = response.read()
-    movie = json.loads(response_read)
-    db = sqlite3.connect(DB_FILE)
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM movie_reviews where movie_id =?", (imdb_id,))
-    reviews = cursor.fetchall()
-    return render_template("movie.html", movie = movie, reviews = reviews)
+    logged_in = session.get("user_id") and session.get("username")
+    if not request.args.get("category") in PRODUCTS:
+        return render_template("index.html", category="", logged_in=logged_in)
+    else:
+        return render_template("index.html", category=request.args.get("category"), data=api_data[request.args.get("category")], logged_in=logged_in)
 
 
 if __name__ == "__main__":
