@@ -50,7 +50,8 @@ P3 -- ArRESTed Development, JuSt in Time
     {% elif category == "recipe" %}
         {% if data["count"] > 0 %}
             {% for hit in data["hits"] %}
-                <img src={{ hit["recipe"]["image"] }}>
+            <div style="padding:10px 10px; margin:10px 10px; font-family:Arial,Helvetica,sans-serif;">
+                <img src={{ hit["recipe"]["image"] }}> <br></br>
                 <h2>{{ hit["recipe"]["label"] }}</h2>
                 <p>Health Labels: {{ ", ".join(hit["recipe"]["healthLabels"]) }}</p>
                 <p>Calories: {{ hit["recipe"]["calories"]|round|int }}</p>
@@ -58,7 +59,8 @@ P3 -- ArRESTed Development, JuSt in Time
                 {% for ingredient in hit["recipe"]["ingredientLines"] %}
                     <p>{{ ingredient }}</p>
                 {% endfor %}
-                <br></br>
+                <hr align="center" width="99%">
+            </div>
             {% endfor %}
         {% else %}
             <p>Sorry, no recipes match your search query.</p>
