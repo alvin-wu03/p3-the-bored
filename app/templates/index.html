@@ -6,15 +6,16 @@ P3 -- ArRESTed Development, JuSt in Time
 -->
 {% extends "layout.html" %}
 {% block content %}
+<br></br>
     <form action={{ url_for("index") }} method="get">
-        <div class="option">
+        <div class="option" style="display:flex">
            <select name="category" style="flex:1; center; padding:2px 5px; margin:10px 5px;">
             	<option value="movie">Movies</option>
             	<option value="book">Books</option>
             	<option value="recipe">Recipes</option>
            </select>
-           <input type="text" id="search" name="search_query" placeholder="Enter Search">
-        <button type ="submit" value="Search" style="flex:1">Search</button>
+           <input type="text" id="search" name="search_query" placeholder="Enter Search" style="flex:8; padding:10px 5px; margin:10px 5px;">
+        <button type ="submit" value="Search" style="flex:1; padding:2px 5px; margin:10px 5px;">Search</button>
         </div>
     </form>
     {% if category == "movie" %}
