@@ -35,5 +35,8 @@ jeffreyH -- 2021-04-27 20:18
 Completed modifying login and register pages with css, looking to add js elements
 ================================================================================
 williamY -- 2021-04-28 23:23
-Implemented search functionality.
+Implemented search functionality for all 3 subjects
+================================================================================
+jeffreyH -- 2021-04-29 00:46
+Completed all css and html styling changes
 ================================================================================
